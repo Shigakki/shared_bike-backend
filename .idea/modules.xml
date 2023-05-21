@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/shared-bike-backend/bikes/bikes.iml" filepath="$PROJECT_DIR$/shared-bike-backend/bikes/bikes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shared-bike-backend/common/common.iml" filepath="$PROJECT_DIR$/shared-bike-backend/common/common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shared-bike-backend/gateWay/gateWay.iml" filepath="$PROJECT_DIR$/shared-bike-backend/gateWay/gateWay.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shared-bike-backend/parent.iml" filepath="$PROJECT_DIR$/shared-bike-backend/parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/shared_bike-backend.iml" filepath="$PROJECT_DIR$/.idea/shared_bike-backend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shared-bike-backend/users/users.iml" filepath="$PROJECT_DIR$/shared-bike-backend/users/users.iml" />
+    </modules>
+  </component>
+</project>

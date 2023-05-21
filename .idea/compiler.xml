@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="bikes" />
+        <module name="common" />
+        <module name="gateWay" />
+        <module name="users" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="bikes" target="1.8" />
+      <module name="common" target="1.8" />
+      <module name="gateWay" target="1.8" />
+      <module name="parent" target="1.8" />
+      <module name="users" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="bikes" options="-parameters" />
+      <module name="common" options="-parameters" />
+      <module name="gateWay" options="-parameters" />
+      <module name="users" options="-parameters" />
+    </option>
+  </component>
+</project>
