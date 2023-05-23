@@ -14,9 +14,10 @@ import org.jetbrains.annotations.NotNull;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
-import java.util.List;
 import java.util.UUID;
 
+// 导入全体的user-token的存储map
+import static com.common.util.UserTokenStorage.userTokenStorage;
 
 
 @RestController
@@ -135,6 +136,9 @@ public class UserController {
         res.setToken(token);
         Result<?> result = Result.success(res);
         System.out.println("---->这次登录的token:"+res.getUsername()+token+"\n");
+
+        // java中的哈希表会自动更新同名的
+        userTokenStorage.put(user.getUsername(), token);
         return result;
     }
 
