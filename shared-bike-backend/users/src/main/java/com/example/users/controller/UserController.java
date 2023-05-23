@@ -14,6 +14,7 @@ import org.jetbrains.annotations.NotNull;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.List;
 import java.util.UUID;
 
 
@@ -117,6 +118,7 @@ public class UserController {
      * @author Shichao
      * @description TODO
      */
+
     @PostMapping("/login")
     @ApiOperation(value = "用户登录")
     public Result<?> login(@NotNull @RequestBody User user){//这只是传进来的user，并没有在数据库中进行查找
