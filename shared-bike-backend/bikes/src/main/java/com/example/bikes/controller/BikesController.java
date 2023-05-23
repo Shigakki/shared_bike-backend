@@ -106,12 +106,16 @@ public class BikesController {
     @GetMapping
     public Result<?> findPage(@RequestParam(defaultValue = "1") Integer pageNum,
                               @RequestParam(defaultValue = "10") Integer pageSize,
-                              @RequestParam(defaultValue = "") String searchRider) {
+                              @RequestParam(defaultValue = "") String searchRider,
+                              @RequestParam(defaultValue = "") String bikeStatus ) {
         System.out.println("打印表单");
         LambdaQueryWrapper<Bike> wrapper = Wrappers.<Bike>lambdaQuery();
         if (StrUtil.isNotBlank(searchRider)) {
             wrapper.like(Bike::getOwner, searchRider);
+        } else if (StrUtil.isNotBlank(bikeStatus)){ // 添加了对bike状态的查询
+            wrapper.like(Bike::getStatus,bikeStatus);
         }
+
         Page<Bike> BikesPage = bikesMapper.selectPage(new Page<>(pageNum, pageSize), wrapper);
         return Result.success(BikesPage);
     }
@@ -151,9 +155,8 @@ public class BikesController {
     }
 
 
-    private class CsvThread extends Thread {
+    private static class CsvThread extends Thread {
 
-        private String csvFilePath = "common/bike_positions.csv"; // 指定CSV文件路径
         private final Socket clientSocket;
 
         public CsvThread(Socket clientSocket) {
@@ -190,7 +193,9 @@ public class BikesController {
                     String time = (String) inputStream.readObject();
 
                     // 将 Person 对象的信息写入 CSV 文件
-                    appendToCSV(csvFilePath ,person, time);
+                    // 指定CSV文件路径
+                    String csvFilePath = "common/bike_positions.csv";
+                    appendToCSV(csvFilePath,person, time);
                 }
             } catch (IOException | ClassNotFoundException e) {
                 e.printStackTrace();
