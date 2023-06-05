@@ -41,7 +41,7 @@ public class BikesController {
      * @author Shichao
      * @description 更新单车的信息
      */
-    String csvFilePath = "common/bike_positions.csv"; // 指定CSV文件路径
+    String csvFilePath = "shared-bike-backend/common/bike_positions.csv"; // 指定CSV文件路径
     @PutMapping
     public Result<?> updateBike(@RequestBody UpdateBikeRequest updateBikeRequest){
         System.out.println("更新单车信息");
