@@ -5,7 +5,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/bike?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8
     username: root
-    password: 1230
+    password: 123
   application:
     name: my-provider-bikes
   cloud:
