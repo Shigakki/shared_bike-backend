@@ -133,6 +133,11 @@ public class UserController {
         res.setToken(token);
         Result<?> result = Result.success(res);
         System.out.println("---->这次登录的token:"+res.getUsername()+token+"\n");
+
+        // token写入
+        res.setToken(token);
+        userMapper.updateById(res);
+
         return result;
     }
 
@@ -151,7 +156,8 @@ public class UserController {
         }
         // 这里相当于就是把用户名和密码进行了设置不为空
         if (user.getPassword()==null){
-            user.setPassword("123456");
+            user.setPassword("1234" +
+                    "56");
         }
         userMapper.insert(user);
         return Result.success();

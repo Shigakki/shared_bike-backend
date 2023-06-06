@@ -9,11 +9,15 @@ import com.common.entity.Bike;
 import com.example.bikes.common.UpdateBikeRequest;
 import com.example.bikes.mapper.BikesMapper;
 import com.opencsv.CSVWriter;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.net.ServerSocket;
+import java.net.Socket;
 
 @RestController
 @RequestMapping("/bikes")
@@ -84,6 +88,18 @@ public class BikesController {
         System.out.println("news的删除功能调用");
         bikesMapper.deleteById(id);
         return Result.success();
+    }
+    /**
+     * @param id:
+     * @return Result<?>
+     * @author Shichao
+     * @description TODO
+     */
+    @GetMapping("/{id}")
+    public Result<?> getById(@PathVariable Long id){
+        System.out.println("根据bike的id进行查询");
+        Bike bike = bikesMapper.selectById(id);
+        return Result.success(bike);
     }
 
     /**
