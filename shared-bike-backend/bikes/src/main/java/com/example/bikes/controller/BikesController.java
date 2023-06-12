@@ -78,7 +78,6 @@ public class BikesController {
         return Result.success(ParkingPage);
     }
 
-
     String csvFilePath = "shared-bike-backend/common/bike_positions.csv"; // 指定CSV文件路径
 
     @PutMapping
@@ -116,7 +115,18 @@ public class BikesController {
         return Result.success();
     }
 
-
+    /**
+     * @param csvFilePath:
+     * @param id:
+     * @param x:
+     * @param y:
+     * @param status:
+     * @param owner:
+     * @param time:
+     * @return void
+     * @author Shichao
+     * @description TODO
+     */
     public static void appendToCSV(String csvFilePath, int id, String x, String y,
                                    String status, String owner, String time) {
         try (CSVWriter writer = new CSVWriter(new FileWriter(csvFilePath, true))) {
