@@ -15,4 +15,5 @@ public class Bike {
     private String y;
     private String status;
     private String owner;
+    private String type;
 }
