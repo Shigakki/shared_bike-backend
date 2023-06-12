@@ -11,7 +11,6 @@ import com.example.bikes.common.UpdateBikeRequest;
 import com.example.bikes.mapper.BikesMapper;
 import com.example.bikes.mapper.ParkingMapper;
 import com.opencsv.CSVWriter;
-import io.swagger.models.auth.In;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
