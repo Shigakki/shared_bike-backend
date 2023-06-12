@@ -117,7 +117,20 @@ public class BikesController {
     }
 
 
-    
+    public static void appendToCSV(String csvFilePath, int id, String x, String y,
+                                   String status, String owner, String time) {
+        try (CSVWriter writer = new CSVWriter(new FileWriter(csvFilePath, true))) {
+            // 创建一个CSVWriter对象并传入FileWriter，以便将数据追加到CSV文件末尾
+
+            // 追加数据行
+            String[] data = {String.valueOf(id), x, y, status, owner, time};
+            writer.writeNext(data);
+
+            // 注意：每个数据行都需要使用字符串数组来表示
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     /**
      * @param id:
