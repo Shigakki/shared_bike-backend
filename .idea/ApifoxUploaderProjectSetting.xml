@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ApifoxUploaderProjectSetting">
+    <option name="apifoxAccessToken" value="APS-TXjheRwFCgCiHcqF3Y48OwqSmEPRjxxF" />
+    <option name="apifoxApiOverwriteMode" value="覆盖所有字段" />
+    <option name="apifoxProjectIds">
+      <array>
+        <option value="# ModuleName:ProjectID" />
+        <option value="shared-bike-backend:2882561" />
+        <option value="users:2882561" />
+        <option value="bikes:2882561" />
+      </array>
+    </option>
+    <option name="yapiTokens" value="" />
+  </component>
+</project>
