@@ -1,8 +1,6 @@
 package com.common.entity;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.*;
 import lombok.Data;
 
 
@@ -14,6 +12,8 @@ public class Bike {
     private String x;
     private String y;
     private String status;
+
+    @TableField(updateStrategy = FieldStrategy.IGNORED)
     private String owner;
     private String type;
 }
